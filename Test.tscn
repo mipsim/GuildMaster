@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/TextContainer.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/rainyhearts.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Next_Icon.png" type="Texture" id=3]
+[ext_resource path="res://DialogBox.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Audio/Every Day Is Night.wav" type="AudioStream" id=5]
+[ext_resource path="res://Test.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Audio/Speak.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Background.jpg" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 880, 120 ), Vector2( 880, 115 ) ]
+}
+
+[node name="Test" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="CenterContainer"]
+position = Vector2( 512.777, 304.432 )
+scale = Vector2( 0.54, 0.54 )
+texture = ExtResource( 8 )
+
+[node name="DialogBox" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -461.5
+margin_top = -178.783
+margin_right = 461.5
+margin_bottom = -31.7839
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="DialogBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="DialogBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Text"
+text = "Text"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next_Icon" type="Sprite" parent="DialogBox"]
+visible = false
+position = Vector2( 880, 120 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/Next_Icon"]
+autoplay = "Idle"
+anims/Idle = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="DialogBox"]
+
+[node name="Speak" type="AudioStreamPlayer" parent="DialogBox"]
+stream = ExtResource( 7 )
+volume_db = -5.0
+pitch_scale = 0.5
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+[connection signal="tween_completed" from="DialogBox/Tween" to="DialogBox" method="_on_Tween_tween_completed"]
