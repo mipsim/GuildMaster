@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Item/Draggable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Item/DropZone.tscn" type="PackedScene" id=2]
+
+[node name="DragTesting" type="Node2D"]
+
+[node name="DropZone2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 725, 287 )
+
+[node name="DropZone" parent="." instance=ExtResource( 2 )]
+position = Vector2( 305, 291 )
+
+[node name="Draggable" parent="." instance=ExtResource( 1 )]
