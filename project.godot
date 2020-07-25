@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Dialogue Test"
+config/name="Guild Master"
 run/main_scene="res://Test.tscn"
 boot_splash/image="res://Assets/Splash.png"
 config/icon="res://icon.png"
@@ -30,7 +30,7 @@ mouse_cursor/custom_image="res://Assets/catpaw.png"
 
 [input]
 
-left_mouse={
+click={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
