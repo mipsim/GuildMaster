@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Dialogue Test"
-run/main_scene="res://Test.tscn"
+run/main_scene="res://TitleScreen/titleScreen.tscn"
 boot_splash/image="res://Assets/Splash.png"
 config/icon="res://icon.png"
 
@@ -26,6 +26,8 @@ Dialog="*res://Dialog.gd"
 
 [display]
 
+window/size/width=1600
+window/size/height=900
 mouse_cursor/custom_image="res://Assets/catpaw.png"
 
 [input]
@@ -38,4 +40,5 @@ left_mouse={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.141176, 0.172549, 0.227451, 1 )
 environment/default_environment="res://default_env.tres"
