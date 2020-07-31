@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Pages/pageBase.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 39
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="pageBase" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="CenterContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -462.0
+margin_top = 35.0
+margin_right = -38.0
+margin_bottom = -35.0
+rect_min_size = Vector2( 424, 530 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Container"]
+margin_right = 424.0
+margin_bottom = 530.0
+rect_min_size = Vector2( 424, 530 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Container/Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -212.0
+margin_top = -265.0
+margin_right = 212.0
+margin_bottom = 265.0
+rect_min_size = Vector2( 424, 530 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pageName" type="Label" parent="Container/Background/VBox"]
+margin_right = 424.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "pageName"
+align = 1
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="Container/Background/VBox"]
+margin_top = 104.0
+margin_right = 424.0
+margin_bottom = 334.0
+rect_min_size = Vector2( 424, 230 )
+
+[node name="pageImage" type="AnimatedSprite" parent="Container/Background/VBox"]
+position = Vector2( 212, 221 )
+scale = Vector2( 3.58244, 3.58244 )
+frames = SubResource( 2 )
+
+[node name="pageText" type="Label" parent="Container/Background/VBox"]
+margin_top = 338.0
+margin_right = 424.0
+margin_bottom = 468.0
+rect_min_size = Vector2( 0, 130 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "pageText"
+align = 1
+valign = 1
+
+[node name="exitPage" type="Button" parent="Container/Background/VBox"]
+margin_top = 472.0
+margin_right = 424.0
+margin_bottom = 492.0
+rect_min_size = Vector2( 212, 20 )
+text = "Back"
+[connection signal="pressed" from="Container/Background/VBox/exitPage" to="." method="_on_exitPage_pressed"]
