@@ -15,23 +15,24 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Guild Master"
-run/main_scene="res://Test.tscn"
+config/name="Dialogue Test"
+run/main_scene="res://TitleScreen/titleScreen.tscn"
 boot_splash/image="res://Assets/Splash.png"
 config/icon="res://icon.png"
 
 [autoload]
 
 Dialog="*res://Dialog.gd"
-desk="*res://Desk/desk.tscn"
 
 [display]
 
+window/size/width=1600
+window/size/height=900
 mouse_cursor/custom_image="res://Assets/catpaw.png"
 
 [input]
 
-click={
+left_mouse={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
@@ -39,4 +40,5 @@ click={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.141176, 0.172549, 0.227451, 1 )
 environment/default_environment="res://default_env.tres"
