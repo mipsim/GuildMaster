@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Pages/pagesTest.gd" type="Script" id=1]
+
+[node name="pagesTest" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="CenterContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -476.0
+margin_top = 57.0
+margin_right = -26.0
+margin_bottom = -160.0
+rect_min_size = Vector2( 450, 383 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="questBoard_BG" type="ColorRect" parent="Container"]
+margin_right = 450.0
+margin_bottom = 383.0
+rect_min_size = Vector2( 450, 383 )
+color = Color( 0.952941, 0.403922, 0.403922, 1 )
+
+[node name="Grid" type="GridContainer" parent="Container"]
+margin_left = 25.0
+margin_top = 41.0
+margin_right = 425.0
+margin_bottom = 341.0
+rect_min_size = Vector2( 400, 300 )
+custom_constants/vseparation = 50
+custom_constants/hseparation = 50
+columns = 3
+
+[node name="quest1" type="Button" parent="Container/Grid"]
+margin_right = 100.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 100, 125 )
+text = "Quest 1"
+
+[node name="quest2" type="Button" parent="Container/Grid"]
+margin_left = 150.0
+margin_right = 250.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 100, 125 )
+text = "Quest 2"
+
+[node name="quest3" type="Button" parent="Container/Grid"]
+margin_left = 300.0
+margin_right = 400.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 100, 125 )
+text = "Quest 3"
+
+[node name="quest4" type="Button" parent="Container/Grid"]
+margin_top = 175.0
+margin_right = 100.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 100, 125 )
+text = "Quest 4"
+
+[node name="quest5" type="Button" parent="Container/Grid"]
+margin_left = 150.0
+margin_top = 175.0
+margin_right = 250.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 100, 125 )
+text = "Quest 5"
+[connection signal="pressed" from="Container/Grid/quest1" to="." method="_on_quest1_pressed"]
+[connection signal="pressed" from="Container/Grid/quest2" to="." method="_on_quest2_pressed"]
+[connection signal="pressed" from="Container/Grid/quest3" to="." method="_on_quest3_pressed"]
+[connection signal="pressed" from="Container/Grid/quest4" to="." method="_on_quest4_pressed"]
+[connection signal="pressed" from="Container/Grid/quest5" to="." method="_on_quest5_pressed"]
