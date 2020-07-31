@@ -7,12 +7,13 @@
 script = ExtResource( 2 )
 
 [node name="shopWindowContainer" type="CenterContainer" parent="."]
-margin_left = 24.4867
-margin_top = 21.766
-margin_right = 346.487
-margin_bottom = 339.766
+margin_left = 24.0
+margin_top = 22.0
+margin_right = 415.0
+margin_bottom = 48.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="shopWindow" parent="shopWindowContainer" instance=ExtResource( 1 )]
+position = Vector2( -9.52258, 1.3604 )
