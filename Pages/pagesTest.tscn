@@ -24,16 +24,17 @@ __meta__ = {
 }
 
 [node name="questBoard_BG" type="ColorRect" parent="Container"]
+margin_top = 150.0
 margin_right = 450.0
-margin_bottom = 383.0
+margin_bottom = 533.0
 rect_min_size = Vector2( 450, 383 )
 color = Color( 0.952941, 0.403922, 0.403922, 1 )
 
 [node name="Grid" type="GridContainer" parent="Container"]
 margin_left = 25.0
-margin_top = 41.0
+margin_top = 191.0
 margin_right = 425.0
-margin_bottom = 341.0
+margin_bottom = 491.0
 rect_min_size = Vector2( 400, 300 )
 custom_constants/vseparation = 50
 custom_constants/hseparation = 50
