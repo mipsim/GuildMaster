@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Item/Draggable.gd" type="Script" id=1]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/icon_temp_100x125.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.7888, 32.0162 )
+extents = Vector2( 50, 62.5 )
 
 [node name="Draggable" type="Node2D"]
 script = ExtResource( 1 )

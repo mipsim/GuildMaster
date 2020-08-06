@@ -1,0 +1,29 @@
+#DropZone_Adventurer.gd
+extends Position2D
+
+# Variables ==========
+var area_entered = false
+
+# Functions ==========
+func get_area_entered(): #called in Draggable.gd
+	return area_entered
+
+func _draw():
+	#draw_circle(Vector2.ZERO, 75, Color.blanchedalmond) #From Tutorial
+	draw_rect(Rect2(Vector2(-200, -200), Vector2(400, 400)), Color.blanchedalmond)
+
+func select():
+	for child in get_tree().get_nodes_in_group("zone"):
+		child.deselect()
+		
+		modulate = Color.webmaroon
+
+func deselect():
+	modulate = Color.white
+
+# Signals ============
+func _on_Area2D_area_entered(area):
+	area_entered = true
+
+func _on_Area2D_area_exited(area):
+	area_entered = false
