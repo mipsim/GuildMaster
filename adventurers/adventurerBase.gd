@@ -1,7 +1,8 @@
 extends Node
 
 #image
-var image = "res//Assets/Characters/chibiMouse"
+#var image = "res://Assets/Characters/chibiMouse.png"
+var image = "res://icon.png"
 
 #dialogue
 var dialogue = "res://adventurers/txt/defaultText"
@@ -13,12 +14,17 @@ var armFellOff = false
 #questing
 
 #character flags
-var title = "baseBoy"
+var title = "default"
 var dead = false
 #stats
 var strength = 3
 var speed = 2
 var spice = 4
+
+#Node overload function to parse children correctly
+func get_class():
+	return "adventurer"
+
 
 func speak():
 	
