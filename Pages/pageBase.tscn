@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Pages/pageBase.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 39
@@ -28,18 +29,19 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -462.0
-margin_top = 35.0
-margin_right = -38.0
-margin_bottom = -35.0
+margin_left = -539.236
+margin_top = 86.0886
+margin_right = -115.236
+margin_bottom = 16.0886
 rect_min_size = Vector2( 424, 530 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Background" type="ColorRect" parent="Container"]
+margin_top = 150.0
 margin_right = 424.0
-margin_bottom = 530.0
+margin_bottom = 680.0
 rect_min_size = Vector2( 424, 530 )
 __meta__ = {
 "_edit_use_anchors_": false

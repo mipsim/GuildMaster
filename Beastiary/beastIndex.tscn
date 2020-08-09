@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Beastiary/beastIndex.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 39
+font_data = ExtResource( 3 )
+
+[node name="beastIndex" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="CenterContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -922.0
+margin_top = 130.0
+margin_right = -498.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 424, 530 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Container"]
+margin_top = 150.0
+margin_right = 424.0
+margin_bottom = 680.0
+rect_min_size = Vector2( 424, 530 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Container/Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -212.0
+margin_top = -265.0
+margin_right = 212.0
+margin_bottom = 265.0
+rect_min_size = Vector2( 424, 530 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pageName" type="Label" parent="Container/Background/VBox"]
+margin_right = 424.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Index"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="Container/Background/VBox"]
+margin_top = 104.0
+margin_right = 424.0
+margin_bottom = 124.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.490196, 0.482353, 0, 1 )
+text = "Monster 1"
+flat = true
+
+[node name="Button2" type="Button" parent="Container/Background/VBox"]
+margin_top = 128.0
+margin_right = 424.0
+margin_bottom = 148.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.490196, 0.482353, 0, 1 )
+text = "Monster 2"
+flat = true
+
+[node name="Button3" type="Button" parent="Container/Background/VBox"]
+margin_top = 152.0
+margin_right = 424.0
+margin_bottom = 172.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.490196, 0.482353, 0, 1 )
+text = "Monster 3"
+flat = true
+
+[node name="Button4" type="Button" parent="Container/Background/VBox"]
+margin_top = 176.0
+margin_right = 424.0
+margin_bottom = 196.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.490196, 0.482353, 0, 1 )
+text = "Monster etc"
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="Container/Background/VBox"]
+margin_top = 200.0
+margin_right = 424.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 424, 300 )
+
+[node name="Button5" type="Button" parent="Container/Background/VBox"]
+margin_top = 504.0
+margin_right = 424.0
+margin_bottom = 524.0
+rect_min_size = Vector2( 40, 20 )
+text = "exit"
+[connection signal="pressed" from="Container/Background/VBox/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Container/Background/VBox/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Container/Background/VBox/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Container/Background/VBox/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Container/Background/VBox/Button5" to="." method="_on_Button5_pressed"]

@@ -53,7 +53,7 @@ position = Vector2( 650, 330 )
 position = Vector2( 770, 330 )
 
 [node name="DropZone_Adventurer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 300, 300 )
+position = Vector2( 300, 647.627 )
 
 [node name="DialogBox" type="Control" parent="."]
 anchor_left = 0.5

@@ -2,20 +2,25 @@ extends Node
 
 
 var currentCharacter #= scene
-var characterQueue #= maybe a file contains characters for each day
-
+var characterList #= maybe a file contains characters for each day
+var charQueue = Array()
 
 func loadCharacterQueue(day):
 	
 	#actually set this by indexing into file
-	characterQueue = "mouse, rat, dog" #this should probably be array
+	characterList = "femCat smugCat dogman default" #this should probably be array
 	for character in get_children():
-		pass
-		#if character.title == "baseBoy":
-			#$currentCharacter.texture = load(character.image)
+		if character.get_class() == "adventurer":
+			if character.title in characterList:
+				charQueue.append(character)
+				
+	
+	nextCharacter()
 func nextCharacter():
-	#for all children, next character = 
-	pass
+	currentCharacter = charQueue.pop_front()
+	if (currentCharacter!=null):
+		#$currentCharacter.texture = null
+		$currentCharacter.set_texture(load(currentCharacter.image))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,3 +31,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func _on_Button_pressed():
+	nextCharacter()
+	
