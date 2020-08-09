@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://shopWindow/shopWindow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Desk/desk.gd" type="Script" id=2]
+[ext_resource path="res://Beastiary/Beastiary.tscn" type="PackedScene" id=3]
 
 [node name="desk" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="Beastiary" parent="." instance=ExtResource( 3 )]
+margin_left = 0.90332
+margin_top = 7.55255
+margin_right = 913.903
+margin_bottom = 203.553
 
 [node name="shopWindowContainer" type="CenterContainer" parent="."]
 margin_left = 24.0
