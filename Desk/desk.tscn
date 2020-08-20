@@ -1,15 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://shopWindow/shopWindow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Desk/desk.gd" type="Script" id=2]
 [ext_resource path="res://Beastiary/Beastiary.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Item/DragTesting.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Background/tavern_bg_1024x600.png" type="Texture" id=5]
 
 [node name="desk" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="tavernBG" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="shopWindow" parent="." instance=ExtResource( 1 )]
-position = Vector2( 14.4774, 23.3604 )
 
 [node name="DragTesting" parent="." instance=ExtResource( 4 )]
 

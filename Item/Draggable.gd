@@ -65,6 +65,10 @@ func _input(event):
 			# if player releases drag in DropZone_Adventurer
 			if get_node("../DropZone_Adventurer").get_area_entered() == true:
 				quest_given = true
+				
+				#change character expression
+				var node = get_tree().get_root().get_node("desk/shopWindow")
+				node.setExpression("happy")
 			
 			selected = false
 			var shortest_dist = 300 #length of draw() from DropZone.gd to snap

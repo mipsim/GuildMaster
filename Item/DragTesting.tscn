@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Next_Icon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Fonts/rainyhearts.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://DialogBox.gd" type="Script" id=8]
-[ext_resource path="res://Assets/quest_board_bg.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Background/tavern_bg_1024x600.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -28,13 +28,14 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 880, 120 ), Vector2( 880, 115 ) ]
+"values": [ Vector2( 330, 80 ), Vector2( 330, 75 ) ]
 }
 
 [node name="DragTesting" type="Node2D"]
 
-[node name="quest_board_bg" type="Sprite" parent="."]
-position = Vector2( 777.144, 244.397 )
+[node name="bgReference" type="Sprite" parent="."]
+visible = false
+position = Vector2( 512, 300 )
 texture = ExtResource( 9 )
 
 [node name="DropZone" parent="." instance=ExtResource( 2 )]
@@ -53,17 +54,18 @@ position = Vector2( 650, 330 )
 position = Vector2( 770, 330 )
 
 [node name="DropZone_Adventurer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 300, 647.627 )
+visible = false
+position = Vector2( 284.837, 236.858 )
 
 [node name="DialogBox" type="Control" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 116.119
-margin_top = 340.0
-margin_right = 485.119
-margin_bottom = 487.0
+margin_left = 87.0
+margin_top = 466.155
+margin_right = 456.0
+margin_bottom = 571.155
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true,
@@ -96,7 +98,7 @@ __meta__ = {
 }
 
 [node name="Next_Icon" type="Sprite" parent="DialogBox"]
-position = Vector2( 325, 120 )
+position = Vector2( 330, 75 )
 texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/Next_Icon"]
