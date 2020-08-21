@@ -6,34 +6,37 @@
 [node name="Beastiary" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 8.0
-margin_bottom = -4.0
+margin_left = 978.0
+margin_top = -21.0
+margin_right = 237.0
+margin_bottom = 10.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_left = 475.59
-margin_top = 325.009
-margin_right = 2075.59
-margin_bottom = 1225.01
+margin_left = -382.105
+margin_top = 392.724
+margin_right = 1217.9
+margin_bottom = 1314.72
 rect_scale = Vector2( 0.25, 0.25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+margin_top = 10.0
 margin_right = 1600.0
-margin_bottom = 900.0
+margin_bottom = 910.0
 texture = ExtResource( 1 )
 stretch_mode = 6
 
 [node name="openBook" type="Button" parent="CenterContainer/TextureRect"]
-margin_left = 449.0
-margin_top = 71.0
-margin_right = 1091.0
-margin_bottom = 838.0
+margin_left = 438.93
+margin_top = 81.0701
+margin_right = 1080.93
+margin_bottom = 848.07
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false

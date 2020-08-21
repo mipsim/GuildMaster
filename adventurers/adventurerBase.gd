@@ -3,6 +3,9 @@ extends Node
 #image
 #var image = "res://Assets/Characters/chibiMouse.png"
 var image = "res://icon.png"
+var neutral = "res://icon.png"
+var happy = "res://icon.png"
+var sad = "res://icon.png"
 
 #dialogue
 var dialogue = "res://adventurers/txt/defaultText"

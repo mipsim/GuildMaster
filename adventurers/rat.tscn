@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://adventurers/smugCat/smugCat.gd" type="Script" id=1]
+[ext_resource path="res://adventurers/rat.gd" type="Script" id=1]
 [ext_resource path="res://adventurers/adventurerBase.tscn" type="PackedScene" id=2]
 
-
-[node name="smugCat" instance=ExtResource( 2 )]
+[node name="rat" instance=ExtResource( 2 )]
 script = ExtResource( 1 )

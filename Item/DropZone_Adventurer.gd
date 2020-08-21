@@ -10,7 +10,7 @@ func get_area_entered(): #called in Draggable.gd
 
 func _draw():
 	#draw_circle(Vector2.ZERO, 75, Color.blanchedalmond) #From Tutorial
-	draw_rect(Rect2(Vector2(-200, -200), Vector2(400, 400)), Color.blanchedalmond)
+	draw_rect(Rect2(Vector2(-250, -300), Vector2(500, 600)), Color.blanchedalmond)
 
 func select():
 	for child in get_tree().get_nodes_in_group("zone"):
