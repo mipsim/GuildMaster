@@ -5,7 +5,11 @@
 [node name="beastPage" instance=ExtResource( 1 )]
 
 [node name="Container" parent="." index="0"]
-margin_left = -922.449
-margin_top = 130.742
-margin_right = -498.449
-margin_bottom = 60.7416
+margin_left = -457.525
+margin_top = 47.593
+margin_right = -33.525
+margin_bottom = -22.407
+
+[node name="Background" parent="Container" index="0"]
+margin_top = 0.0
+margin_bottom = 530.0
