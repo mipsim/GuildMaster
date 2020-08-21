@@ -19,19 +19,18 @@ __meta__ = {
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -922.0
-margin_top = 130.0
-margin_right = -498.0
-margin_bottom = 60.0
+margin_left = -457.525
+margin_top = 47.5931
+margin_right = -33.5248
+margin_bottom = -22.4069
 rect_min_size = Vector2( 424, 530 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Background" type="ColorRect" parent="Container"]
-margin_top = 150.0
 margin_right = 424.0
-margin_bottom = 680.0
+margin_bottom = 530.0
 rect_min_size = Vector2( 424, 530 )
 __meta__ = {
 "_edit_use_anchors_": false

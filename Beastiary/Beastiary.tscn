@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Beastiary/booksmol.jpg" type="Texture" id=1]
+[ext_resource path="res://Beastiary/journal.png" type="Texture" id=1]
 [ext_resource path="res://Beastiary/Beastiary.gd" type="Script" id=2]
 
 [node name="Beastiary" type="Control"]
@@ -14,23 +14,26 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_left = 744.183
-margin_top = 362.0
-margin_right = 1091.18
-margin_bottom = 805.0
+margin_left = 475.59
+margin_top = 325.009
+margin_right = 2075.59
+margin_bottom = 1225.01
+rect_scale = Vector2( 0.25, 0.25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
-margin_right = 347.0
-margin_bottom = 443.0
+margin_right = 1600.0
+margin_bottom = 900.0
 texture = ExtResource( 1 )
 stretch_mode = 6
 
 [node name="openBook" type="Button" parent="CenterContainer/TextureRect"]
-margin_right = 343.0
-margin_bottom = 439.0
+margin_left = 449.0
+margin_top = 71.0
+margin_right = 1091.0
+margin_bottom = 838.0
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
