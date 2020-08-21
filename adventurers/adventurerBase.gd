@@ -6,6 +6,7 @@ var image = "res://icon.png"
 
 #dialogue
 var dialogue = "res://adventurers/txt/defaultText"
+var questDialogue = "res://adventurers/txt/defaultQuest"
 var dialogueIndex = 0
 #dialogue flags
 var motherDead = false
@@ -27,9 +28,9 @@ func get_class():
 
 
 func speak():
-	
+	dialogueIndex = dialogueIndex+1
 	checkFlags()
-	
+	get_node("/root/desk/DragTesting/DialogBox").text = "hey"
 	#call dialogue parsing function 
 		#for line dialogueIndex in dialogue file
 	#feed this line into dialogue text box
@@ -51,7 +52,7 @@ func checkFlags():
 		if motherDead == true:
 			#maybe only check on day start!!!!
 			#only choose a line from this dialogue somehow
-			dialogue = "res://adventurers/txt/motherDeadTree"
+			#dialogue = "res://adventurers/txt/motherDeadTree"
 			#dialogueIndex = 0
 			pass
 		

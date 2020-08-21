@@ -1,0 +1,19 @@
+Oh, hello. I see you're not the usual guild clerk.
+Never the less, I look forward to working with you and am willing to take any quests you have to offer.
+I am a fully trained knight, however I'm getting quite old, so I am getting a little slower I'm afraid.
+[GQ] That sounds like something I can do. I'll complete this task to the best of my abilities
+[DE] Whatever the outcome, I look forward to our next meeting, good bye.
+Hello again. It looks like we will be seeing a lot of eachother in the future.
+[QD]
+I don't wish to hold up this line for too long, do you have any quests for me today?
+[GQ] Oh, that sounds like it could be amusing. I look forward to it.
+[DE] Well I'll be going again. I look forward to seeing you next time
+Good morning... I realized I haven't asked your name yet. I'm sorry.
+My name is Lucky (subject to change). I've been adventureing my entire life, it's all I know.
+I'm getting a bit too old for this, but it would be impossible to find a new job at my age. *chuckle*
+Any ways, I'm not getting any younger so what job do you have for me today
+[GQ] Thank you, this sound just right for me.
+[DE] You're a quiet one, but I can tell you mean no disrespect. I'll see you again next time.
+Busy day it seems, you must be tired. I respect your dedication to your job
+
+Well enough of this old dog monolouging, what kind of quest do you have for me today?
