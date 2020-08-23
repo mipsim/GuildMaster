@@ -18,6 +18,7 @@ func loadCharacterQueue(day):
 	nextCharacter()
 func nextCharacter():
 	currentCharacter = charQueue.pop_front()
+	currentCharacter.speak()
 	if (currentCharacter!=null):
 		#$currentCharacter.texture = null
 		$currentCharacter.set_texture(load(currentCharacter.image))

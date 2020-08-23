@@ -1,6 +1,8 @@
 #DropZone.gd
 extends Position2D
 
+var adventurer = false
+
 func _draw():
 	#draw_circle(Vector2.ZERO, 75, Color.blanchedalmond) #From Tutorial
 	#draw_rect(Rect2(Vector2(center position), Vector2(dimensions)), color)

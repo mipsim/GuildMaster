@@ -8,8 +8,10 @@ var happy = "res://icon.png"
 var sad = "res://icon.png"
 
 #dialogue
-var dialogue = "res://adventurers/txt/defaultText"
-var questDialogue = "res://adventurers/txt/defaultQuest"
+#onready var dialogue = 'res://txt/Dialogue.txt'
+onready var dialogue = 'res://adventurers/adventureTxt/DogChat.txt'
+#onready var questDialogue = 'res://txt/Drag_ResponseTest.txt'
+onready var questDialogue = 'res://adventurers/adventureTxt/DogQuest.txt'
 var dialogueIndex = 0
 #dialogue flags
 var motherDead = false
@@ -33,22 +35,30 @@ func get_class():
 func speak():
 	dialogueIndex = dialogueIndex+1
 	checkFlags()
-	get_node("/root/desk/DragTesting/DialogBox").text = "hey"
+	var dialog = get_tree().get_root().get_node("desk/DragTesting/DialogBox")
+	dialog.set_dialog(dialogue)
+	dialog.load_dialog()
 	#call dialogue parsing function 
 		#for line dialogueIndex in dialogue file
 	#feed this line into dialogue text box
-	
 	pass
 
-func respond(questName):
+func respond(questIndex):
+	#respond to the quest index
+	#send this info to the dialogBox
+	#call function to feed replyText to dialogue chatbox
+	var dialog = get_tree().get_root().get_node("desk/DragTesting/DialogBox")
+	dialog.set_dialog(questDialogue)
+	
+	#dialog.load_dialog(questIndex, true)
+	dialog.load_dialog()
 	#default quest reply text
 	var replyText = "ok ill take it"
 	#if quest very special
-	if questName == "batQuest":
+	if questIndex == "batQuest Index":
 		motherDead=true
-		replyText = "bats? let's fuck it up ahaaa"
+		replyText = "bats? let's tt up ahaaa"
 	
-	#call function to feed replyText to dialogue chatbox
 
 func checkFlags():
 	if dialogueIndex == 4:
@@ -70,6 +80,8 @@ func checkDayFlags():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#load_file(dialogue)
+	#load_file(questDialogue)
 	pass # Replace with function body.
 
 

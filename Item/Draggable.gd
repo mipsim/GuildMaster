@@ -2,6 +2,11 @@
 extends Node2D
 
 # Variables ==========
+
+#this determines the index of the quest and will be changeable
+#in the scene when you make a inherited scene
+export var questIndex = 1
+
 var selected = false
 var rest_point
 var init_rest_point = 0 #index based on number of quests, 
@@ -13,11 +18,48 @@ var quest_given = false
 var mouseover = false
 
 # Functions ==========
+func _input(event):
+	if event is InputEventMouseButton and mouseover:
+		# if player double clicks on Item display quest info
+		if event.doubleclick:
+			var load_page = load("res://Pages/questBase.tscn").instance()
+			get_tree().get_root().add_child(load_page)
+		
+		# if player releases Left Mouse Button
+		if event.button_index == BUTTON_LEFT and not event.pressed:
+			# if player releases drag in DropZone_Adventurer
+			if desk.GQ && get_node("../DropZone_Adventurer").get_area_entered() == true:
+				desk.GQ = false
+				#change character expression
+				var shopWindow = get_tree().get_root().get_node("desk/shopWindow")
+				#this happy expression should be set by adventurer text
+				shopWindow.setExpression("happy")
+				
+				#this should be changed and offloaded to the adventurer
+				quest_given = true
+				
+				#respnd(quest Index)
+				shopWindow.currentCharacter.speak()
+				
+				#shopWindow.currentCharacter.respond(questIndex)
+				
+				#delete quest b/c loaded
+				delete_quest()
+				
+				
+			#some michael code idk
+			selected = false
+			var shortest_dist = 300 #length of draw() from DropZone.gd to snap
+			for child in rest_nodes:
+				var distance = global_position.distance_to(child.global_position)
+				if !child.adventurer && distance < shortest_dist:
+					child.select()
+					rest_point = child.global_position
+					shortest_dist = distance
+			#print("quest_given: " + str(get_quest_given())) #DELETEME
+
 func get_quest_given():
 	return quest_given
-
-func set_quest_given(new):
-	quest_given = new
 
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("zone")
@@ -52,33 +94,6 @@ func _physics_process(delta):
 		)
 	else:
 		global_position = lerp(global_position, rest_point, 10 * delta)
-
-func _input(event):
-	if event is InputEventMouseButton and mouseover:
-		# if player double clicks on Item
-		if event.doubleclick:
-			var load_page = load("res://Pages/questBase.tscn").instance()
-			get_tree().get_root().add_child(load_page)
-		
-		# if player releases Left Mouse Button
-		if event.button_index == BUTTON_LEFT and not event.pressed:
-			# if player releases drag in DropZone_Adventurer
-			if get_node("../DropZone_Adventurer").get_area_entered() == true:
-				quest_given = true
-				
-				#change character expression
-				var node = get_tree().get_root().get_node("desk/shopWindow")
-				node.setExpression("happy")
-			
-			selected = false
-			var shortest_dist = 300 #length of draw() from DropZone.gd to snap
-			for child in rest_nodes:
-				var distance = global_position.distance_to(child.global_position)
-				if distance < shortest_dist:
-					child.select()
-					rest_point = child.global_position
-					shortest_dist = distance
-			print("quest_given: " + str(get_quest_given())) #DELETEME
 
 func delete_quest():
 	queue_free()

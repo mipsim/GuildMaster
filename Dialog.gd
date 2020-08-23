@@ -2,48 +2,38 @@
 extends Node
 
 # Var for txt file
-onready var dialog_txt = 'res://txt/Dialogue.txt'
-onready var drag_response_txt = 'res://txt/Drag_ResponseTest.txt'
+onready var currentDialog = 'res://txt/Dialogue.txt'
 
 # Number of lines in txt file
 var dialog_size = 1
-var drag_response_size = 1
 
 # Methods =====================================
 
 func _ready():
-	load_file(dialog_txt)
-	load_file(drag_response_txt)
-	
-	print("Dialog size: " + str(dialog_size))
-	print("Drag_Response size: " + str(drag_response_size))
+	#load_file(dialog_txt)
+	#load_file(drag_response_txt)
+	pass
 
 # Generic File Loader
+# counts the number of lines in the file
+# call this every time need to read text
 func load_file(file):
+	#everytime you load_file it's for a new file so reset stats
+	dialog_size = 1
+	currentDialog = file
 	var f = File.new()
-	f.open(file, File.READ)
-	var index = 1
+	f.open(currentDialog, File.READ)
 	while not f.eof_reached(): # iterate through all lines until the end of file is reached
 		var line = f.get_line()
-		line += " "
-		#print(line + str(index))
-
-		index += 1
-		
-		if (file == dialog_txt):
-			dialog_size += 1
-		if (file == drag_response_txt):
-			drag_response_size += 1
-
+		dialog_size += 1
 	f.close()
 	return
-
 # Getters ====================================
-
 # Call index on Dialogue.txt
+# after you have loaded the file, then call _get_dialog to read from it
 func _get_dialog(index_call):
 	var f = File.new()
-	f.open(dialog_txt, File.READ)
+	f.open(currentDialog, File.READ)
 	var index = 1
 	
 	# iterate through all lines until the end of file is reached
@@ -60,22 +50,3 @@ func _get_dialog(index_call):
 func _get_dialog_size():
 	return dialog_size
 
-# Call index on Drag_ResponseTest.txt
-func _get_drag_response(index_call):
-	var f = File.new()
-	f.open(drag_response_txt, File.READ)
-	var index = 1
-	
-	# iterate through all lines until the end of file is reached
-	while not f.eof_reached(): 
-		var line = f.get_line()
-		if (index == index_call):
-			return line
-		
-		index += 1
-	
-	f.close()
-	return "Line of dialogue not found, invalid index"
-
-func _get_drag_response_size():
-	return drag_response_size

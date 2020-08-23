@@ -2,6 +2,9 @@
 extends Position2D
 
 # Variables ==========
+#check to see if will snap here or now
+var adventurer = true
+
 var area_entered = false
 
 # Functions ==========

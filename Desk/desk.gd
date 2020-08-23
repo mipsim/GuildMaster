@@ -3,6 +3,8 @@ extends Node2D
 
 var day = 0
 
+var GQ = false
+var DE = false
 
 func writeToStorage():
 	#saveGame
